@@ -1,0 +1,72 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Navbar Styles */
+.nav-bar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #ffffff;
+  padding: 0 50px;
+  border-bottom: 1.5px solid #002922;
+  z-index: 1;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 160px;
+  padding-bottom: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: 1.5px solid #002922;
+  background-color: #dd9941;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100vw;
+  gap: 100px;
+}
+
+/* Not Found Page Styles */
+.notFoundPage {
+  padding-top: 160px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #dd9941;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 100px;
+}
+
+/* Footer Styles */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  height: 80px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  border-top: 1.5px solid #002922;
+  padding: 0 50px;
+  color: #002922;
+  font-size: 16px;
+  font-weight: 400;
+}
