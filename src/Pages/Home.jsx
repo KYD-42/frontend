@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import React from 'react'
+import SERVER from '../../data/server'
+
+const server = SERVER
+
 
 function Home() {
   return (

@@ -1,3 +1,9 @@
+import React from 'react'
+import SERVER from '../../data/server'
+
+const server = SERVER
+
+
 function BusinessProfile() {
     return (
         <section className="business-profile">

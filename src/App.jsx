@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import About from "./Pages/About";
 import NotFound from "./Pages/NotFound";
+import SignUp from "./Pages/Profiles/SignUp"
 
 // Components
 import Navbar from "./Components/NavBar";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<SignUp/>}/>
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>
