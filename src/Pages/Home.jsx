@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
-import React from 'react'
-import SERVER from '../../data/server'
+import React from "react";
+import SERVER from "../../data/server";
 
-const server = SERVER
-
+const server = SERVER;
 
 function Home() {
   return (
@@ -17,6 +16,14 @@ function Home() {
       </div>
       <div>
         <Link to="/about">About</Link>
+      </div>
+      <div>
+        <Link to="/signup" className="signUP">
+          <button>Register User</button>
+        </Link>
+        <Link to="/business-signup" className="signUP">
+          <button>Register Business</button>
+        </Link>
       </div>
       <Footer />
     </section>

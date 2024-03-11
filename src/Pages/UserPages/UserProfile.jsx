@@ -1,5 +1,6 @@
 import React from 'react'
-import SERVER from '../../data/server'
+import SERVER from '../../../data/server'
+
 
 const server = SERVER
 
@@ -7,7 +8,7 @@ const server = SERVER
 function UserProfile() {
     return (
         <section className="user-profile">
-            <h1>User Profile</h1>
+            <div className="touSoAver"><h1>User Profile</h1></div>
         </section>
     );
 }

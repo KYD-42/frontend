@@ -1,5 +1,5 @@
 import React from 'react'
-import SERVER from '../../data/server'
+import SERVER from '../../../data/server'
 
 const server = SERVER
 
