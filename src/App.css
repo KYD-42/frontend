@@ -1,9 +1,13 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+
 /* General Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Navbar Styles */
@@ -15,9 +19,8 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  background-color: #ffffff;
+  background-color: #FFBC03;
   padding: 0 50px;
-  border-bottom: 1.5px solid #002922;
   z-index: 1;
 }
 
@@ -59,12 +62,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #FFBC03;
   height: 80px;
   width: 100vw;
   position: fixed;
   bottom: 0;
-  border-top: 1.5px solid #002922;
   padding: 0 50px;
   color: #002922;
   font-size: 16px;

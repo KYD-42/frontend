@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 import Footer from "../Components/Footer";
 import React from "react";
 import SERVER from "../../data/server";
@@ -6,6 +8,8 @@ import SERVER from "../../data/server";
 const server = SERVER;
 
 function Home() {
+  const { isLoggedIn } = useContext(AuthContext);
+
   return (
     <section>
       <div className="hero">
@@ -15,15 +19,16 @@ function Home() {
         <h1>Welcome to Tails & Tables</h1>
       </div>
       <div>
-        <Link to="/about">About</Link>
-      </div>
-      <div>
-        <Link to="/signup" className="signUP">
-          <button>Register User</button>
-        </Link>
-        <Link to="/business-signup" className="signUP">
-          <button>Register Business</button>
-        </Link>
+        {!isLoggedIn && ( // Render buttons if user is not logged in
+          <>
+            <Link to="/signup" className="signUP">
+              <button>User sign up</button>
+            </Link>
+            <Link to="/business-signup" className="signUP">
+              <button>Business sign up</button>
+            </Link>
+          </>
+        )}
       </div>
       <Footer />
     </section>

@@ -4,10 +4,12 @@ import { Routes, Route } from "react-router-dom";
 // Tails&Tales Pages
 import HomePage from "./Pages/Home";
 import About from "./Pages/About";
+import Bars from "./Pages/Places/BarsPage";
 
-// Registration Pages
+// SIGNUP // LOGIN  Pages
 import SignUp from "./Pages/Registration/SignUp";
 import SignUpBusiness from "./Pages/Registration/SignUpBusiness";
+import LogIn from "./Pages/LogIn";
 
 // User Pages
 import UserProfile from "./Pages/UserPages/UserProfile";
@@ -34,10 +36,14 @@ function App() {
           {/* Tails&Tales */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/places" element={<Bars />} />
 
           {/* Registration Pages */}
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/business-signup" element={<SignUpBusiness/>}/>
+
+          {/* Login Pages */}
+          <Route path="/login" element={<LogIn/>}/>
 
           {/* User side */}
           <Route path="/profile" element={<UserProfile/>}/>

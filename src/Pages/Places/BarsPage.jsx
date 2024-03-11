@@ -1,12 +1,44 @@
-import React from 'react'
-import SERVER from '../../data/server'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+const API_URL = "http://localhost:5005";
 
-const server = SERVER
+function PlacesDisplay() {
+  const [places, setPlaces] = useState([]);
 
-function BarsPage() {
+  useEffect(() => {
+    const fetchPlaces = () => {
+      axios
+        .get(`${API_URL}/api/places`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        })
+        .then((response) => {
+          setPlaces(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching places:", error);
+        });
+    };
+
+    fetchPlaces();
+  }, []);
+
   return (
-    <div>BarsPage</div>
-  )
+    <section className="touSoAver">
+      <div>
+        <h1>PetFriendly Places</h1>
+        {places.map((place) => (
+          <div>
+            <img src={place.logo} alt={place.name} />
+            <h2>{place.name}</h2>
+            <p>{place.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default BarsPage
+export default PlacesDisplay;
