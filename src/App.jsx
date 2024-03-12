@@ -4,7 +4,9 @@ import { Routes, Route } from "react-router-dom";
 // Tails&Tales Pages
 import HomePage from "./Pages/Home";
 import About from "./Pages/About";
-import Bars from "./Pages/Places/BarsPage";
+import Places from "./Pages/Places/PlacesList";
+import PlacesDetails from "./Pages/Places/PlacesDetails"
+
 
 // SIGNUP // LOGIN  Pages
 import SignUp from "./Pages/Registration/SignUp";
@@ -16,6 +18,7 @@ import UserProfile from "./Pages/UserPages/UserProfile";
 
 // Business Page
 import Dashboard from "./Pages/BusinessPages/Dashboard"
+import BusinessProfile from "./Pages/BusinessPages/BusinessProfile"
 
 // Components
 import Navbar from "./Components/NavBar";
@@ -23,20 +26,19 @@ import Navbar from "./Components/NavBar";
 // Not Found
 import NotFound from "./Pages/NotFound";
 
-
-
 function App() {
   return (
     <main>
       <Navbar />
       <div>
-        <h1>Tales and Tales</h1>
+        <h1 style={{ marginTop: "80px" }}>Tails & Tables</h1>
         <Routes>
 
           {/* Tails&Tales */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/places" element={<Bars />} />
+          <Route path="/places" element={<Places />} />
+          <Route path="/places/:id" element={<PlacesDetails/>}/>
 
           {/* Registration Pages */}
           <Route path="/signup" element={<SignUp/>}/>
@@ -46,11 +48,11 @@ function App() {
           <Route path="/login" element={<LogIn/>}/>
 
           {/* User side */}
-          <Route path="/profile" element={<UserProfile/>}/>
+          <Route path="/profile/:id" element={<UserProfile/>}/>
 
           {/* Business Side */}
           <Route path="/dashboard" element={<Dashboard />} />
-
+          <Route path="/business/:id" element={<BusinessProfile />}/>
 
           {/* Not found */}
           <Route path="/*" element={<NotFound />} />
@@ -62,3 +64,6 @@ function App() {
 }
 
 export default App;
+
+
+//  tá tudo bem!

@@ -74,7 +74,7 @@
 }
 
 .touSoAver {
-  margin-top: 10px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
@@ -100,4 +100,147 @@
 .touSoAver button {
   margin-top: 16px;
   width: 100%;
+}
+
+
+/* REGISTRATION BUTTONS */
+
+/* USER ACCOUNT BUTTON */
+
+.registerUser {
+  position: relative;
+  background-color: transparent;
+  color: #e8e8e8;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 500px;
+  height: 250px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.registerUser::before {
+  content: "Unlock pet-friendly adventures, share your experiences, and connect with a community of fellow pet lovers. Register now for exclusive access!!";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg,#7b4397,#dc2430 );
+  transform: translate(0%,90%);
+  z-index: 99;
+  position: relative;
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.registerUser::after {
+  content: "Create account";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-origin: top;
+  transform: translate(0%,-100%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.registerUser:hover::before {
+  transform: translate(0%,0%);
+}
+
+.registerUser:hover::after {
+  transform: translate(0%,-200%);
+}
+
+.registerUser:focus {
+  outline: none;
+}
+
+.registerUser:active {
+  scale: 0.95;
+}
+
+/* BUSINESS BUTTON */
+
+.businessUser {
+  position: relative;
+  background-color: transparent;
+  color: #e8e8e8;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 500px;
+  height: 250px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.businessUser::before {
+  content: "Unlock a world of opportunities, showcase your pet-friendly business, and become a part of our thriving community. Register as a business user today!";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(135deg,#7b4397,#dc2430 );
+  transform: translate(0%,90%);
+  z-index: 99;
+  position: relative;
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.businessUser::after {
+  content: "Register Business";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-origin: top;
+  transform: translate(0%,-100%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.businessUser:hover::before {
+  transform: translate(0%,0%);
+}
+
+.businessUser:hover::after {
+  transform: translate(0%,-200%);
+}
+
+.businessUser:focus {
+  outline: none;
+}
+
+.businessUser:active {
+  scale: 0.95;
+}
+
+.places {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 50px;
 }

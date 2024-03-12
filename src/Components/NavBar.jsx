@@ -9,7 +9,11 @@ function NavBar() {
   return (
     <div className="nav-bar">
       <NavLink to="/">
-        <img src={TNT_white} alt="Tails-&-Tables-logo-white" style={{ width: "100px" }} />
+        <img
+          src={TNT_white}
+          alt="Tails-&-Tables-logo-white"
+          style={{ width: "100px" }}
+        />
       </NavLink>
       {!isLoggedIn && ( // Display Log In button if not logged in
         <NavLink to="/login" className="logIn">

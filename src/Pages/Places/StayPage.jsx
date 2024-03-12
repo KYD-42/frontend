@@ -1,7 +1,7 @@
 import React from 'react'
 import SERVER from '../../data/server'
 
-const server = SERVER
+const server = SERVER()
 
 
 function StayPage() {
