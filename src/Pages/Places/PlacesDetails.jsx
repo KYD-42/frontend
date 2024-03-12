@@ -39,7 +39,7 @@ function PlaceDetails() {
 
 
   return (
-    <div>
+    <div  classname="touSoAver">
       <h1>{place.name}</h1>
       <div>
         <section>

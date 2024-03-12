@@ -31,7 +31,6 @@ function App() {
     <main>
       <Navbar />
       <div>
-        <h1 style={{ marginTop: "80px" }}>Tails & Tables</h1>
         <Routes>
 
           {/* Tails&Tales */}
@@ -66,4 +65,6 @@ function App() {
 export default App;
 
 
-//  tá tudo bem!
+//  tá tudo bem!  
+
+// vai ficar tudo bem 🌈

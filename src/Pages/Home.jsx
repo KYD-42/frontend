@@ -3,29 +3,36 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import Footer from "../Components/Footer";
 import React from "react";
-import SERVER from "../../data/server";
+import logo from "../assets/TNT_white.svg";
+import DisplayWeather from "../Components/DisplayWeather";
 
-const server = SERVER;
+const API_URL = "http://localhost:5005/";
+const WEATHER = "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1010500.json"
+
 
 function Home() {
   const { isLoggedIn } = useContext(AuthContext);
+    
+  
 
   return (
     <section>
       <div className="hero">
-        <img className="logo-main" src="" alt="tails-&-tables-logo" />
+        <h1 style={{ textAlign: 'left', fontSize: '100px' }}>Where your Buddy is welcome!
+        <br/>Come and join us</h1>
+
       </div>
       <div className="hero-text">
-        <h1>Welcome to Tails & Tables</h1>
       </div>
+        <div className="weather-display"><DisplayWeather/></div>
       <div>
         {!isLoggedIn && ( // Render buttons if user is not logged in
           <>
             <Link to="/signup" className="signUP">
-              <button>User sign up</button>
+              <button className="registerUser">User sign up</button>
             </Link>
             <Link to="/business-signup" className="signUP">
-              <button>Business sign up</button>
+              <button className="businessUser">Business sign up</button>
             </Link>
           </>
         )}
@@ -33,6 +40,6 @@ function Home() {
       <Footer />
     </section>
   );
-}
+  }
 
 export default Home;

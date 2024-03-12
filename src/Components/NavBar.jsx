@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context";
 import TNT_white from "../../src/assets/TNT_white.svg";
 
 function NavBar() {
-  const { isLoggedIn, logOutUser } = useContext(AuthContext);
+  const { isLoggedIn, logOutUser, user } = useContext(AuthContext);
 
   return (
     <div className="nav-bar">
@@ -15,14 +15,21 @@ function NavBar() {
           style={{ width: "100px" }}
         />
       </NavLink>
-      {!isLoggedIn && ( // Display Log In button if not logged in
-        <NavLink to="/login" className="logIn">
-          <button>Log In</button>
-        </NavLink>
-      )}
-      {isLoggedIn && ( // Display Log Out button if logged in
-        <button onClick={logOutUser}>Log Out</button>
-      )}
+      <div className="nav-buttons">
+        {!isLoggedIn && (
+          <NavLink to="/login" className="logIn">
+            <button className="nav-button">Log In</button>
+          </NavLink>
+        )}
+        {isLoggedIn && (
+          <>
+            <NavLink to={`/profile/${user._id}`}>
+              <button className="nav-button">Profile</button>
+            </NavLink>
+            <button className="nav-button" onClick={logOutUser}>Log Out</button>
+          </>
+        )}
+      </div>
     </div>
   );
 }

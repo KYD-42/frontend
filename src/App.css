@@ -1,5 +1,6 @@
 /* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* General Styles */
 * {
@@ -7,7 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* Navbar Styles */
@@ -24,24 +25,51 @@
   z-index: 1;
 }
 
+.nav-buttons{
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  width: 100px;
+  height: 35px;
+  border: 3px solid #ffffff;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1em;
+  font-weight: 550;
+}
+
+.nav-button:hover {
+  background: #FFBC03;
+  color: white;
+  border: 3px solid #ffffff;
+  font-size: 1.1em;
+}
+
 /* Hero Section Styles */
 .hero {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 160px;
+  justify-content: top;
+  align-items: left;
+  padding-top: 80px;
   padding-bottom: 80px;
   padding-left: 50px;
   padding-right: 50px;
-  border-bottom: 1.5px solid #002922;
-  background-color: #dd9941;
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   height: 70vh;
-  width: 100vw;
-  gap: 100px;
+  width: calc(100vw - 160px); /* Adjusted width to consider both left and right margins */
+  margin: 160px auto; /* Adjusted margin to center the hero section */
+  border-radius: 20px; /* Rounded corners */
+  overflow: hidden; /* Ensure rounded corners apply properly */
+  background-image: url("https://plus.unsplash.com/premium_photo-1661757028319-f2ddea2dd347?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: bottom;
 }
 
 /* Not Found Page Styles */
@@ -62,15 +90,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #FFBC03;
+  background-color: #C9C9C9;
   height: 80px;
   width: 100vw;
-  position: fixed;
-  bottom: 0;
-  padding: 0 50px;
-  color: #002922;
+  padding: 0 50px; /* Increased padding to match the side margins of the hero section */
+  color: #000000;
   font-size: 16px;
   font-weight: 400;
+}
+
+.footer-button{
+  width: 100px;
+  height: 35px;
+  border: 3px solid #ffffff;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1em;
+  font-weight: 550;
+}
+
+.footer-button:hover {
+  background: #c9c9c9;
+  color: white;
+  border: 3px solid #ffffff;
+  font-size: 1.1em;
 }
 
 .touSoAver {
@@ -244,3 +289,10 @@
   margin-bottom: 50px;
   gap: 50px;
 }
+
+
+.hero{
+  font-size:50px;
+  color:white
+}
+
