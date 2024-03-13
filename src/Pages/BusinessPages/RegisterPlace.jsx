@@ -4,10 +4,14 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
-const navigate = useNavigate()
 
 function RegisterPlace() {
-
+  
+  const { user , isLoggedIn } = useContext(AuthContext)
+  const { busUser , setBusUser} = useState({})
+  
+  const navigate = useNavigate()
+  
     const [logo, setLogo] = useState("")
     const [name, setName] = useState("")
     const [type, setType] = useState("")
@@ -19,8 +23,6 @@ function RegisterPlace() {
     const [comments, setComments] = useState ("")
     const [error, setError] = useState(null)
 
-    const { user , isLoggedIn } = useContext(AuthContext)
-    const { busUser , setBusUser} = useState({})
 
     const handlePlaceCreate = (e) => {
       e.preventDefault();
@@ -43,7 +45,7 @@ function RegisterPlace() {
         navigate("/dashboard") // TEMOS QUE VER PARA ONDE DAMOS O REDIRECT
       })
       .catch((error)=>{
-        SpeechSynthesisErrorEvent("Failed creating the place")
+        setError("Failed creating the place")
         console.log(error)
 
       })
