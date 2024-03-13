@@ -11,15 +11,23 @@ function PlaceDetails() {
   const [newComment, setNewComment] = useState({ userName: "", text: "" });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [trigger, setTrigger] = useState(false);
+
+  useEffect(() => {
+    fetchPlaceAndComments();
+  }, [id, trigger]);
 
   const fetchPlaceAndComments = async () => {
     try {
       const placeResponse = await axios.get(`${API_URL}/api/places/${id}`);
       setPlace(placeResponse.data);
-      const commentsResponse = await axios.get(`${API_URL}/api/places/${id}/comments`);
+      const commentsResponse = await axios.get(
+        `${API_URL}/api/places/${id}/comments`
+      );
       setComments(commentsResponse.data);
       setLoading(false);
     } catch (error) {
+      console.error(error);
       setError("Error fetching place and comments.");
       setLoading(false);
     }
@@ -33,27 +41,36 @@ function PlaceDetails() {
     e.preventDefault();
     try {
       await axios.post(`${API_URL}/api/places/${id}/comments`, newComment);
-      fetchComments(); // Refetch comments after adding a new comment
       setNewComment({ userName: "", text: "" });
-      setRenderTrigger(prevState => !prevState); // Update renderTrigger to trigger a re-render
+      setTrigger(!trigger);
+      fetchPlaceAndComments();
     } catch (error) {
       setError("Error adding comment.");
+    }
+  };
+
+  const handleCommentUpdate = async (commentId, updatedComment) => {
+    try {
+      await axios.put(
+        `${API_URL}/api/places/${id}/comments/${commentId}`,
+        updatedComment
+      );
+      setTrigger(!trigger);
+      fetchPlaceAndComments();
+    } catch (error) {
+      setError("Error updating comment.");
     }
   };
 
   const handleCommentDelete = async (commentId) => {
     try {
       await axios.delete(`${API_URL}/api/places/${id}/comments/${commentId}`);
-      fetchComments(); // Refetch comments after deleting a comment
-      setRenderTrigger(prevState => !prevState); // Update renderTrigger to trigger a re-render
+      setTrigger(!trigger);
+      fetchPlaceAndComments();
     } catch (error) {
       setError("Error deleting comment.");
     }
   };
-
-  useEffect(() => {
-    fetchPlaceAndComments();
-  }, [id]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -76,9 +93,10 @@ function PlaceDetails() {
           <h3>Email: {place.email}</h3>
           <div>
             {comments.length > 0 &&
-              comments.map((comment, index) => (
-                <p key={index}>
+              comments.map((comment) => (
+                <p key={comment._id}>
                   <strong>{comment.userName}:</strong> {comment.text}
+                  <button onClick={() => handleCommentUpdate(comment._id, { userName: comment.userName, text: "Updated text" })}>update</button>
                   <button onClick={() => handleCommentDelete(comment._id)}>delete</button>
                 </p>
               ))}
