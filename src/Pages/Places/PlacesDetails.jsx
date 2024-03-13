@@ -1,45 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
 function PlaceDetails() {
   const { id } = useParams();
   const [place, setPlace] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState({ userName: "", text: "" });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchPlaceDetail = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/api/places/${id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
-        });
-        setPlace(response.data);
-        setLoading(false); 
-      } catch (error) {
-        setError("Error fetching place.");
-        setLoading(false); 
-      }
-    };
+  const fetchPlaceAndComments = async () => {
+    try {
+      const placeResponse = await axios.get(`${API_URL}/api/places/${id}`);
+      setPlace(placeResponse.data);
+      const commentsResponse = await axios.get(`${API_URL}/api/places/${id}/comments`);
+      setComments(commentsResponse.data);
+      setLoading(false);
+    } catch (error) {
+      setError("Error fetching place and comments.");
+      setLoading(false);
+    }
+  };
 
-    fetchPlaceDetail();
+  const handleCommentChange = (e) => {
+    setNewComment({ ...newComment, [e.target.name]: e.target.value });
+  };
+
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${API_URL}/api/places/${id}/comments`, newComment);
+      fetchComments(); // Refetch comments after adding a new comment
+      setNewComment({ userName: "", text: "" });
+      setRenderTrigger(prevState => !prevState); // Update renderTrigger to trigger a re-render
+    } catch (error) {
+      setError("Error adding comment.");
+    }
+  };
+
+  const handleCommentDelete = async (commentId) => {
+    try {
+      await axios.delete(`${API_URL}/api/places/${id}/comments/${commentId}`);
+      fetchComments(); // Refetch comments after deleting a comment
+      setRenderTrigger(prevState => !prevState); // Update renderTrigger to trigger a re-render
+    } catch (error) {
+      setError("Error deleting comment.");
+    }
+  };
+
+  useEffect(() => {
+    fetchPlaceAndComments();
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>; 
+    return <div>{error}</div>;
   }
 
-
   return (
-    <div  className="touSoAver">
+    <div className="touSoAver">
       <h1>{place.name}</h1>
       <div>
         <section>
@@ -49,12 +74,36 @@ function PlaceDetails() {
           <h3>Price Level: {place.priceLevel}</h3>
           <h3>Phone: {place.phone}</h3>
           <h3>Email: {place.email}</h3>
-          <h3>Comments: {place.comments}</h3>
+          <div>
+            {comments.length > 0 &&
+              comments.map((comment, index) => (
+                <p key={index}>
+                  <strong>{comment.userName}:</strong> {comment.text}
+                  <button onClick={() => handleCommentDelete(comment._id)}>delete</button>
+                </p>
+              ))}
+          </div>
+          <form onSubmit={handleCommentSubmit}>
+            <input
+              type="text"
+              name="userName"
+              placeholder="Your Name"
+              value={newComment.userName}
+              onChange={handleCommentChange}
+              required
+            />
+            <textarea
+              name="text"
+              placeholder="Your Comment"
+              value={newComment.text}
+              onChange={handleCommentChange}
+              required
+            ></textarea>
+            <button type="submit">Add Comment</button>
+          </form>
           <Link to="/places">
             <button>
-              <span>
-                <span>Back</span>
-              </span>
+              <span>Back</span>
             </button>
           </Link>
         </section>

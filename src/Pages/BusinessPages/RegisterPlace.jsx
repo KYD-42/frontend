@@ -31,7 +31,6 @@ function RegisterPlace() {
       priceLevel,
       phone,
       email,
-      comments,
     };
 
     axios
@@ -119,15 +118,7 @@ function RegisterPlace() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div>
-                <label>Comments:</label>
-                <input
-                  type="text"
-                  name="comments"
-                  value={comments}
-                  onChange={(e) => setComments(e.target.value)}
-                />
-              </div>
+              
               <button type="submit">Register Place</button>
             </form>
             {error && <p>{error}</p>}{" "}
