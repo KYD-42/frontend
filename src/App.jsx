@@ -19,6 +19,7 @@ import UserProfile from "./Pages/UserPages/UserProfile";
 // Business Page
 import Dashboard from "./Pages/BusinessPages/Dashboard"
 import BusinessProfile from "./Pages/BusinessPages/BusinessProfile"
+import RegisterPlace from "./Pages/BusinessPages/RegisterPlace"
 
 // Components
 import Navbar from "./Components/NavBar";
@@ -42,6 +43,7 @@ function App() {
           {/* Registration Pages */}
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/business-signup" element={<SignUpBusiness/>}/>
+          <Route path="/business-register-place" element={<RegisterPlace/>}/>
 
           {/* Login Pages */}
           <Route path="/login" element={<LogIn/>}/>

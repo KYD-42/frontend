@@ -9,6 +9,7 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
+/*   const [busUser, setBusUser] = useState(null)*/
   const [authError, setAuthError] = useState(null);
 
   const storeToken = (token) => {
@@ -28,11 +29,12 @@ function AuthProviderWrapper(props) {
         })
         .then((response) => {
           // If the server verifies that JWT token is valid
-          const user = response.data;
+          const user/* , busUser} */  = response.data;
           // Update state variables
           setIsLoggedIn(true);
           setIsLoading(false);
-          setUser(user);
+          setUser(user/*  || busUser */);
+          /* setBusUser(busUser || user) */
         })
         .catch((error) => {
           if (error) {
@@ -44,6 +46,7 @@ function AuthProviderWrapper(props) {
           setIsLoggedIn(false);
           setIsLoading(false);
           setUser(null);
+        /*   setBusUser(null) */
         });
     } else {
       // If the token is not available
