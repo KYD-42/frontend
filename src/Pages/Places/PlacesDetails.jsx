@@ -1,4 +1,4 @@
-/* import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -147,7 +147,9 @@ function PlaceDetails() {
 }
 
 export default PlaceDetails;
- */
+
+
+/*
 
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -293,3 +295,5 @@ function PlaceDetails() {
 }
 
 export default PlaceDetails;
+
+ */
