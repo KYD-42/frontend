@@ -12,8 +12,7 @@ function PlaceDetails() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [trigger, setTrigger] = useState(false);
-  const [editingCommentId, setEditingCommentId] = useState(null);
-
+ 
   const handleEditClick = (commentId) => {
     const commentToEdit = comments.find((comment) => comment._id === commentId);
     setNewComment({
