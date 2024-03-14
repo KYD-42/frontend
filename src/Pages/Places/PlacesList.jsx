@@ -185,9 +185,6 @@ function PlacesDisplay() {
             </NavLink>
           ))}
         </div>
-        <Link to="/business-register-place">
-              <button className="businessUser">Business sign up</button>
-            </Link>
       </div>
     </section>
   );

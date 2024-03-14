@@ -5,6 +5,7 @@ const server = SERVER;
 
 function About() {
   return (
+    <section>
     <div className="about-text">
       <h1>Welcome to Tails and Tables</h1>
       <p>
@@ -13,7 +14,6 @@ function About() {
         discovering the perfect restaurant, bar, hotel, or hostel that welcomes
         your beloved pet is now easier than ever.
       </p>
-
       <p>
         Sign up today and join our ever-growing community of pet lovers! By
         registering, you unlock a world of possibilities. Not only can you
@@ -34,6 +34,8 @@ function About() {
         Let's make every outing with your pet a tail-wagging success!
       </p>
     </div>
+
+    </section>
   );
 }
 
