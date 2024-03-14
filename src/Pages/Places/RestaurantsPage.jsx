@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link} from "react-router-dom";
+
 
 const API_URL = "http://localhost:5005";
 
@@ -44,8 +45,7 @@ function RestaurantsPage() {
       <div>
         <h1 className="touSoAver">PetFriendly Places</h1>
         <div>
-          <button onClick={() => setFilterType(null)}>All</button>
-          <button onClick={() => setFilterType("Restaurant")}>Restaurants</button> // Changed button text to "Restaurants"
+          <Link to="/places"><button>All</button></Link>
         </div>
         {loading && <div>Loading...</div>}
         {error && <div>{error}</div>}

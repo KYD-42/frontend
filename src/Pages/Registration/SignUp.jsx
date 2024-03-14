@@ -46,7 +46,7 @@ function SignUp() {
   };
 
   return (
-    <div className="touSoAver">
+    <div className="touSoAver" style={{marginTop: "300px"}}>
       <form onSubmit={handleSubmit}>
         <h3>Sign Up</h3>
 

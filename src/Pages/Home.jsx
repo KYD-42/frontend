@@ -25,13 +25,13 @@ function Home() {
       <div className="hero-text">
       </div>
       <div className="places-buttons">
-            <Link to="/">
+            <Link to="/places/restaurants">
               <button className="placesRest">Restaurants</button>
             </Link>
-            <Link to="/">
+            <Link to="/places/bars">
               <button className="placesBars">Bars</button>
             </Link>
-            <Link to="/">
+            <Link to="/places/hotels-hostels">
               <button className="placesHotl">Hotels & Hostels</button>
             </Link>
             </div>

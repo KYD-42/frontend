@@ -6,6 +6,9 @@ import HomePage from "./Pages/Home";
 import About from "./Pages/About";
 import Places from "./Pages/Places/PlacesList";
 import PlacesDetails from "./Pages/Places/PlacesDetails"
+import RestaurantsPage from "./Pages/Places/RestaurantsPage";
+import BarsPage from "./Pages/Places/BarsPage";
+import StayPage from "./Pages/Places/StayPage";
 
 
 // SIGNUP // LOGIN  Pages
@@ -39,6 +42,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/places" element={<Places />} />
           <Route path="/places/:id" element={<PlacesDetails/>}/>
+          <Route path="/places/restaurants" element={<RestaurantsPage/>}/>
+          <Route path="/places/bars" element={<BarsPage/>}/>
+          <Route path="/places/hotels-hostels" element={<StayPage/>}/>
 
           {/* Registration Pages */}
           <Route path="/signup" element={<SignUp/>}/>

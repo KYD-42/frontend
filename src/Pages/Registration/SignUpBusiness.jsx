@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { CloudinaryContext, Image } from "cloudinary-react";
 
 const API_URL = "http://localhost:5005";
 
@@ -26,6 +27,7 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     axios
       .post(`${API_URL}/auth/signup`, formData)
       .then(() => {
@@ -45,9 +47,9 @@ function SignUp() {
         <label htmlFor="logo">Your Logo</label>
         <input
           type="file"
-          name="img"
+          name="logo"
           value={formData.logo}
-          onChange={handleChange}
+          onChange={(e) => setFormData({...formData, logo: e.target.files[0]})}
         />
 
         <label htmlFor="companyName">Business Name</label>

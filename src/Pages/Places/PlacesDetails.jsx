@@ -57,8 +57,6 @@ const handleCommentDelete = async (commentId) => {
   }
 };
 
-
-
  if (loading) {
     return <div>Loading...</div>;
  }
