@@ -57,7 +57,7 @@ function HotelsAndHostelsPage() {
                 </div>
               </NavLink>
             )) : (
-              <Link to="/business-signup">
+              <Link to="/business-register-place">
               <button className="businessUser">Business sign up</button>
             </Link>
             )}

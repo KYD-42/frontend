@@ -172,9 +172,10 @@ function PlacesDisplay() {
           <button onClick={() => setFilterType("Hotel")}>Hotels</button>
           <button onClick={() => setFilterType("Hostel")}>Hostels</button>
         </div>
-        {loading ? <div>Loading...</div> : error ? <div>{error}</div> : (
+        {loading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
         <div>
-          {filteredPlaces.length > 0 ? filteredPlaces.map((place) => (
+          {filteredPlaces.map((place) => (
             <NavLink key={place._id} to={`/places/${place._id}`}>
               <div className="places">
                 <img src={place.logo} alt={place.name} />
@@ -182,17 +183,14 @@ function PlacesDisplay() {
                 <p>{place.description}</p>
               </div>
             </NavLink>
-          )) : (
-            <Link to="//business-register-place">
+          ))}
+        </div>
+        <Link to="/business-register-place">
               <button className="businessUser">Business sign up</button>
             </Link>
-          )}
-        </div>
-        )}
       </div>
     </section>
   );
-  
 }
 
 export default PlacesDisplay;

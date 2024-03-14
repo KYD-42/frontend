@@ -47,22 +47,27 @@ function RestaurantsPage() {
         <div>
           <Link to="/places"><button>All</button></Link>
         </div>
-        {loading && <div>Loading...</div>}
-        {error && <div>{error}</div>}
-        <div>
-          {filteredPlaces.map((place) => (
-            <NavLink key={place._id} to={`/places/${place._id}`}>
-              <div className="places">
-                <img src={place.logo} alt={place.name} />
-                <h2>{place.name}</h2>
-                <p>{place.description}</p>
-              </div>
-            </NavLink>
-          ))}
-        </div>
+        {loading ? <div>Loading...</div> : error ? <div>{error}</div> : (
+          <div>
+            {filteredPlaces.length > 0 ? filteredPlaces.map((place) => (
+              <NavLink key={place._id} to={`/places/${place._id}`}>
+                <div className="places">
+                  <img src={place.logo} alt={place.name} />
+                  <h2>{place.name}</h2>
+                  <p>{place.description}</p>
+                </div>
+              </NavLink>
+            )) : (
+              <Link to="/business-register-place">
+              <button className="businessUser">Business sign up</button>
+            </Link>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
+  
 }
 
 export default RestaurantsPage; 
