@@ -186,6 +186,9 @@ function PlacesDisplay() {
           ))}
         </div>
       </div>
+      <Link to="/business-register-place">
+              <button className="businessUser">Business sign up</button>
+            </Link>
     </section>
   );
 }
