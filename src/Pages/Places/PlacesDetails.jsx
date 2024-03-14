@@ -118,14 +118,14 @@ function PlaceDetails() {
               ))}
           </div>
           <form onSubmit={handleCommentSubmit}>
-            {/*<input
+            <input
               type="text"
               name="userName"
               placeholder="Your Name"
               value={newComment.userName}
               onChange={handleCommentChange}
               required
-            />*/}
+            />
             <textarea
               name="text"
               placeholder="Your Comment"
