@@ -122,7 +122,7 @@ export default PlacesDisplay;
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link } from "react-router-dom";
 
 const API_URL = "https://backend-g5k3.onrender.com";
 
