@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://backend-g5k3.onrender.com";
+const API_URL = "http://localhost:5005";
 
 function PlaceDetails() {
   const { id } = useParams();
@@ -12,7 +12,8 @@ function PlaceDetails() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [trigger, setTrigger] = useState(false);
- 
+  const [editingCommentId, setEditingCommentId] = useState(null);
+
   const handleEditClick = (commentId) => {
     const commentToEdit = comments.find((comment) => comment._id === commentId);
     setNewComment({
