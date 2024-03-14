@@ -24,14 +24,25 @@ function Home() {
       </div>
       <div className="hero-text">
       </div>
+      <div className="places-buttons">
+            <Link to="/">
+              <button className="placesRest">Restaurants</button>
+            </Link>
+            <Link to="/">
+              <button className="placesBars">Bars</button>
+            </Link>
+            <Link to="/">
+              <button className="placesHotl">Hotels & Hostels</button>
+            </Link>
+            </div>
         <div className="weather-display"><DisplayWeather/></div>
       <div>
         {!isLoggedIn && ( // Render buttons if user is not logged in
           <>
-            <Link to="/signup" className="signUP">
+            <Link to="/signup">
               <button className="registerUser">User sign up</button>
             </Link>
-            <Link to="/business-signup" className="signUP">
+            <Link to="/business-signup">
               <button className="businessUser">Business sign up</button>
             </Link>
           </>

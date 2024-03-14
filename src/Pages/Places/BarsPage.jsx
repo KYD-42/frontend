@@ -4,13 +4,12 @@ import { NavLink } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
-function RestaurantsPage() { 
+function BarsPage() {
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [filterType, setFilterType] = useState("Restaurant"); 
-  
+  const [filterType, setFilterType] = useState("Bar");
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
@@ -45,7 +44,7 @@ function RestaurantsPage() {
         <h1 className="touSoAver">PetFriendly Places</h1>
         <div>
           <button onClick={() => setFilterType(null)}>All</button>
-          <button onClick={() => setFilterType("Restaurant")}>Restaurants</button> // Changed button text to "Restaurants"
+          <button onClick={() => setFilterType("Bar")}>Bars</button>
         </div>
         {loading && <div>Loading...</div>}
         {error && <div>{error}</div>}
@@ -65,4 +64,4 @@ function RestaurantsPage() {
   );
 }
 
-export default RestaurantsPage; 
+export default BarsPage;

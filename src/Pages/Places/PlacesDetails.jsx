@@ -5,82 +5,69 @@ import axios from "axios";
 const API_URL = "http://localhost:5005";
 
 function PlaceDetails() {
-  const { id } = useParams();
-  const [place, setPlace] = useState(null);
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState({ userName: "", text: "" });
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [trigger, setTrigger] = useState(false);
+ const { id } = useParams();
+ const [place, setPlace] = useState(null);
+ const [comments, setComments] = useState([]);
+ const [newComment, setNewComment] = useState({ userName: "", text: "" });
+ const [error, setError] = useState(null);
+ const [loading, setLoading] = useState(true);
+ const [ trigger, setTrigger] = useState(false);
 
-  useEffect(() => {
-    fetchPlaceAndComments();
-  }, [id, trigger]);
+ useEffect(() => {
+  fetchPlaceAndComments(); 
+}, [id,trigger]);
 
-  const fetchPlaceAndComments = async () => {
+ const fetchPlaceAndComments = async () => {
     try {
       const placeResponse = await axios.get(`${API_URL}/api/places/${id}`);
       setPlace(placeResponse.data);
-      const commentsResponse = await axios.get(
-        `${API_URL}/api/places/${id}/comments`
-      );
+      const commentsResponse = await axios.get(`${API_URL}/api/places/${id}/comments`);
       setComments(commentsResponse.data);
       setLoading(false);
     } catch (error) {
-      console.error(error);
+      console.error(error); // Log the error for debugging
       setError("Error fetching place and comments.");
       setLoading(false);
     }
-  };
+ };
 
-  const handleCommentChange = (e) => {
+ const handleCommentChange = (e) => {
     setNewComment({ ...newComment, [e.target.name]: e.target.value });
-  };
+ };
 
-  const handleCommentSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(`${API_URL}/api/places/${id}/comments`, newComment);
-      setNewComment({ userName: "", text: "" });
-      setTrigger(!trigger);
-      fetchPlaceAndComments();
-    } catch (error) {
-      setError("Error adding comment.");
-    }
-  };
+ const handleCommentSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await axios.post(`${API_URL}/api/places/${id}/comments`, newComment);
+    setNewComment({ userName: "", text: "" });
+    setTrigger(!trigger); // Update trigger state first
+    fetchPlaceAndComments(); // Then fetch the updated comments
+  } catch (error) {
+    setError("Error adding comment.");
+  }
+};
 
-  const handleCommentUpdate = async (commentId, updatedComment) => {
-    try {
-      await axios.put(
-        `${API_URL}/api/places/${id}/comments/${commentId}`,
-        updatedComment
-      );
-      setTrigger(!trigger);
-      fetchPlaceAndComments();
-    } catch (error) {
-      setError("Error updating comment.");
-    }
-  };
+const handleCommentDelete = async (commentId) => {
+  try {
+    await axios.delete(`${API_URL}/api/places/${id}/comments/${commentId}`);
+    setTrigger(!trigger); // Update trigger state first
+    fetchPlaceAndComments(); // Then fetch the updated comments
+  } catch (error) {
+    setError("Error deleting comment.");
+  }
+};
 
-  const handleCommentDelete = async (commentId) => {
-    try {
-      await axios.delete(`${API_URL}/api/places/${id}/comments/${commentId}`);
-      setTrigger(!trigger);
-      fetchPlaceAndComments();
-    } catch (error) {
-      setError("Error deleting comment.");
-    }
-  };
 
-  if (loading) {
+
+ if (loading) {
     return <div>Loading...</div>;
-  }
+ }
 
-  if (error) {
+ if (error) {
     return <div>{error}</div>;
-  }
+ }
 
-  return (
+ return (
     <div className="touSoAver">
       <h1>{place.name}</h1>
       <div>
@@ -94,10 +81,9 @@ function PlaceDetails() {
           <div>
             {comments.length > 0 &&
               comments.map((comment) => (
-                <p key={comment._id}>
-                  <strong>{comment.userName}:</strong> {comment.text}
-                  <button onClick={() => handleCommentUpdate(comment._id, { userName: comment.userName, text: "Updated text" })}>update</button>
-                  <button onClick={() => handleCommentDelete(comment._id)}>delete</button>
+                <p key={comment._id}> {/* Assuming each comment has a unique _id */}
+                 <strong>{comment.userName}:</strong> {comment.text}
+                 <button onClick={() => handleCommentDelete(comment._id)}>delete</button>
                 </p>
               ))}
           </div>
@@ -127,7 +113,7 @@ function PlaceDetails() {
         </section>
       </div>
     </div>
-  );
+ );
 }
 
 export default PlaceDetails;
