@@ -189,6 +189,13 @@ function PlacesDisplay() {
       <Link to="/business-register-place">
               <button className="businessUser">Business sign up</button>
             </Link>
+            <div>
+          <button onClick={() => setFilterType(null)}>All</button>
+          <button onClick={() => setFilterType("Restaurant")}>Restaurants</button>
+          <button onClick={() => setFilterType("Bar")}>Bars</button>
+          <button onClick={() => setFilterType("Hotel")}>Hotels</button>
+          <button onClick={() => setFilterType("Hostel")}>Hostels</button>
+        </div>
     </section>
   );
 }
