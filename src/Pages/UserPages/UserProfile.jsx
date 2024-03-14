@@ -3,7 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://backend-g5k3.onrender.com";
 
 function UserProfile() {
   const { user, isLoggedIn } = useContext(AuthContext);

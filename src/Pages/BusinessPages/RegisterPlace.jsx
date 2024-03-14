@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://backend-g5k3.onrender.com";
 
 function RegisterPlace() {
   const { isLoggedIn, user } = useContext(AuthContext);

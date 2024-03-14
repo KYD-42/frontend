@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://backend-g5k3.onrender.com";
 
 function PlaceDetails() {
   const { id } = useParams();
