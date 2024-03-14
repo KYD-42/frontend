@@ -6,7 +6,7 @@ import React from "react";
 import logo from "../assets/TNT_white.svg";
 import DisplayWeather from "../Components/DisplayWeather";
 
-const API_URL = "https://backend-g5k3.onrender.com/";
+const API_URL = "http://localhost:5005/";
 const WEATHER = "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1010500.json"
 
 
