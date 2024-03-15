@@ -56,9 +56,7 @@ function BarsPage() {
                 </div>
               </NavLink>
             )) : (
-              <Link to="/business-register-place">
-              <button className="businessUser">Business sign up</button>
-            </Link>
+              <h2>Sorry but we don't have any partner yet 🐾 </h2>
             )}
           </div>
         )}

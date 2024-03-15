@@ -119,7 +119,7 @@ function SignUp() {
           autoComplete="off"
         />
 
-        <label htmlFor="photo">Photo</label>
+       {/*  <label htmlFor="photo">Photo</label>
         <input
           type="file"
           name="photo"
@@ -127,7 +127,7 @@ function SignUp() {
           value={formData.photo}
           onChange={handleChange}
           autoComplete="off"
-        />
+        /> */}
 
         <label htmlFor="bio">Bio</label>
         <input
@@ -139,7 +139,7 @@ function SignUp() {
           autoComplete="off"
         />
 
-        <label htmlFor="petPhoto">Pet Photo</label>
+      {/*   <label htmlFor="petPhoto">Pet Photo</label>
         <input
           type="file"
           name="petPhoto"
@@ -147,7 +147,7 @@ function SignUp() {
           value={formData.petPhoto}
           onChange={handleChange}
           autoComplete="off"
-        />
+        /> */}
         <label htmlFor="petName">Pet Name</label>
         <input
           type="text"

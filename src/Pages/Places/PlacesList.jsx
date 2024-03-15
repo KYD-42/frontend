@@ -186,9 +186,9 @@ function PlacesDisplay() {
           ))}
         </div>
       </div>
-      <Link to="/business-register-place">
+{/*       <Link to="/business-register-place">
               <button className="businessUser">Business sign up</button>
-            </Link>
+            </Link> */}
             <div>
           <button onClick={() => setFilterType(null)}>All</button>
           <button onClick={() => setFilterType("Restaurant")}>Restaurants</button>
