@@ -24,24 +24,46 @@ function Home() {
       </div>
       <div className="hero-text">
       </div>
-      <div className="places-buttons">
+      <div className="places-buttons" style={{width: '500px' , height: '250px'}}>
             <Link to="/places/restaurants">
-              <button className="placesRest">Restaurants</button>
+            <div className="registerUser">
+            <img src="https://images.unsplash.com/photo-1568365994436-e2d079dc65cd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:'100%'}} alt="Card image"/>
+    <div className="registerUser__content">
+      <p className="registerUser__title">Restaurants</p>
+      <p className="registerUser__description"></p>
+    </div>
+  </div> 
             </Link>
             <Link to="/places/bars">
-              <button className="placesBars">Bars</button>
+            <div className="registerUser">
+  <img src="https://images.unsplash.com/photo-1469788700396-33787e74fac5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:'100%'}} alt="Card image"/>
+    <div className="registerUser__content">
+      <p className="registerUser__title">Bars</p>
+      <p className="registerUser__description"></p>
+    </div>
+  </div> 
             </Link>
             <Link to="/places/hotels-hostels">
-              <button className="placesHotl">Hotels & Hostels</button>
+ <div className="registerUser">
+  <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?q=80&w=3029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:'100%'}} alt="Card image"/>
+    <div className="registerUser__content">
+      <p className="registerUser__title">Hotels & Hostels</p>
+      <p className="registerUser__description"></p>
+    </div>
+  </div> 
             </Link>
+
+
+
+
             </div>
         <div className="weather-display"><DisplayWeather/></div>
       <div>
         {!isLoggedIn && ( // Render buttons if user is not logged in
-          <div className ="homeBTNreg">
+          <div className ="homeBTNreg" style={{marginBottom:'100px'}}>
             <Link to="/signup">
   <div className="registerUser">
-  <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image"/>
+  <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:'100%'}} alt="Card image"/>
     <div className="registerUser__content">
       <p className="registerUser__title">Register your account</p>
       <p className="registerUser__description">Unlock pet-friendly adventures, share your experiences, and connect with a community of fellow pet lovers. Register now for exclusive access!!</p>

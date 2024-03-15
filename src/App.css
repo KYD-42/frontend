@@ -65,7 +65,7 @@
   background-position: center;
   height: 70vh;
   width: calc(100vw - 160px); /* Adjusted width to consider both left and right margins */
-  margin: 160px auto; /* Adjusted margin to center the hero section */
+  margin: 160px auto 100px auto; /* Adjusted margin to center the hero section */
   border-radius: 20px; /* Rounded corners */
   overflow: hidden; /* Ensure rounded corners apply properly */
   background-image: url("https://plus.unsplash.com/premium_photo-1661757028319-f2ddea2dd347?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -171,6 +171,7 @@
   justify-content: center;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+
 }
 
 .registerUser svg {
@@ -667,4 +668,11 @@
 }
 
 
-/* bro tas ai? tou na call */
+.forecast{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  align-content:center;
+  margin-bottom: 50px;
+  gap:40px
+}
