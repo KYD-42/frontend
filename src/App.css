@@ -680,7 +680,7 @@
 .PlacesImg{
   width: 1080px;
   height: 607.5px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   border-radius: 20px;
 }
