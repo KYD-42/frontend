@@ -147,73 +147,72 @@
 }
 
 
+
 /* REGISTRATION BUTTONS */
 
 /* USER ACCOUNT BUTTON */
 
 .registerUser {
   position: relative;
-  background-color: transparent;
-  color: #e8e8e8;
-  font-size: 17px;
-  font-weight: 600;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
   border-radius: 10px;
-  width: 500px;
-  height: 250px;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.registerUser::before {
-  content: "Unlock pet-friendly adventures, share your experiences, and connect with a community of fellow pet lovers. Register now for exclusive access!!";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: linear-gradient(135deg,#7b4397,#dc2430 );
-  transform: translate(0%,90%);
-  z-index: 99;
-  position: relative;
-  transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.registerUser::after {
-  content: "Create account";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  transform-origin: top;
-  transform: translate(0%,-100%);
+.registerUser svg {
+  width: 48px;
+  fill: #333;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.registerUser:hover::before {
-  transform: translate(0%,0%);
+.registerUser:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.registerUser:hover::after {
-  transform: translate(0%,-200%);
+.registerUser__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.registerUser:focus {
-  outline: none;
+.registerUser:hover .registerUser__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
 }
 
-.registerUser:active {
-  scale: 0.95;
+.registerUser__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
 }
 
+.registerUser__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.registerUser:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
 /* BUSINESS BUTTON */
 
 .businessUser {
