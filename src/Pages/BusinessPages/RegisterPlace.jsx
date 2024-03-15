@@ -70,6 +70,7 @@ function RegisterPlace() {
             <h3>Register Your Place</h3>
             <form onSubmit={handlePlaceCreate}>
               <div>
+                <label>Upload a photo</label>
                 <input type="file" onChange={handleChange}/>
                 </div>
               <div>
