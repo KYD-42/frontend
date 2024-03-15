@@ -172,33 +172,36 @@ function PlacesDisplay() {
           <button className="nav-button" onClick={() => setFilterType("Hotel")}>Hotels</button>
           <button className="nav-button" onClick={() => setFilterType("Hostel")}>Hostels</button>
         </div>
-        {loading && <div>Loading...</div>}
-        {error && <div>{error}</div>}
-        <div>
-          {filteredPlaces.map((place) => (
-            <NavLink key={place._id} to={`/places/${place._id}`}>
-              <div className="places" style={{ gap: '30px' }}>
-              <img src={place.logo} style={{ width: '780px', height: '360px', borderRadius: '20px' }} alt={place.name} />
-                <br/>
-                <button className="nav-button">{place.name}</button>
-                <p>{place.description}</p>
-              </div>
-            </NavLink>
-          ))}
-        </div>
+        {loading ? <div>Loading...</div> : error ? <div>{error}</div> : (
+          <div>
+            {filteredPlaces.length > 0 ? filteredPlaces.map((place) => (
+              <NavLink key={place._id} to={`/places/${place._id}`}>
+                <div className="places" style={{ gap: '30px' }}>
+                  <img src={place.logo} style={{ width: '780px', height: '360px', borderRadius: '20px' }} alt={place.name} />
+                  <br/>
+                  <button className="nav-button">{place.name}</button>
+                  <p>{place.description}</p>
+                </div>
+              </NavLink>
+            )) : (
+              <h2>Sorry but we don't have any partner yet 🐾 </h2>
+            )}
+          </div>
+        )}
       </div>
-{/*       <Link to="/business-register-place">
-              <button className="businessUser">Business sign up</button>
-            </Link> */}
-            <div>
-          <button className="nav-button" onClick={() => setFilterType(null)}>All</button>
-          <button className="nav-button" onClick={() => setFilterType("Restaurant")}>Restaurants</button>
-          <button className="nav-button" onClick={() => setFilterType("Bar")}>Bars</button>
-          <button className="nav-button" onClick={() => setFilterType("Hotel")}>Hotels</button>
-          <button className="nav-button" onClick={() => setFilterType("Hostel")}>Hostels</button>
-        </div>
+      {/* <Link to="/business-register-place">
+        <button className="businessUser">Business sign up</button>
+      </Link> */}
+      <div>
+        <button className="nav-button" onClick={() => setFilterType(null)}>All</button>
+        <button className="nav-button" onClick={() => setFilterType("Restaurant")}>Restaurants</button>
+        <button className="nav-button" onClick={() => setFilterType("Bar")}>Bars</button>
+        <button className="nav-button" onClick={() => setFilterType("Hotel")}>Hotels</button>
+        <button className="nav-button" onClick={() => setFilterType("Hostel")}>Hostels</button>
+      </div>
     </section>
   );
+  
 }
 
 export default PlacesDisplay;
