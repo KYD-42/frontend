@@ -90,9 +90,9 @@ function PlaceDetails() {
   return (
     <div className="touSoAver">
       <h1>{place.name}</h1>
-      <div style={{marginTop:'100px'}}>
+      <div>
         <section>
-        <img src={place.logo} className="PlacesImg" alt={place.name} />
+        <img src={place.logo} className="PlacesImg"  style={{marginTop:'100px', width: '1080px', height: '607.5px'}}  alt={place.name} />
           <h3>
             Type:{" "}
             {Array.isArray(place.type) ? place.type.join(", ") : place.type}
