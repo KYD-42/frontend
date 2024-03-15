@@ -58,7 +58,7 @@ function HotelsAndHostelsPage() {
                 </div>
               </NavLink>
             )) : (
-              <h2>Sorry but we don't have any partner yet 🐾 </h2>
+              <h2 styles={{marginTop:'50px', marginBottom:'300px'}}>Sorry but we don't have any partner yet 🐾 </h2>
             )}
           </div>
         )}
