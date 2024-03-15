@@ -18,7 +18,7 @@ function Home() {
   return (
     <section>
       <div className="hero">
-        <h1 style={{ textAlign: 'left', fontSize: '100px' }}>Where your Buddy is welcome!
+        <h1 style={{ textAlign: 'left', fontSize: '100px' }}>Where your buddy is welcome!
         <br/>Come and join us</h1>
 
       </div>

@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { CloudinaryContext } from 'cloudinary-react';
 
 // Tails&Tales Pages
 import HomePage from "./Pages/Home";
@@ -32,6 +33,7 @@ import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
+    <CloudinaryContext cloudName="do09bl99j">
     <main>
       <Navbar />
       <div>
@@ -67,6 +69,7 @@ function App() {
       </div>
 
     </main>
+    </CloudinaryContext>
   );
 }
 
