@@ -90,7 +90,7 @@ function PlaceDetails() {
   return (
     <div className="touSoAver">
       <h1>{place.name}</h1>
-      <div>
+      <div style={{marginTop:'100px'}}>
         <section>
         <img src={place.logo} className="PlacesImg" alt={place.name} />
           <h3>
