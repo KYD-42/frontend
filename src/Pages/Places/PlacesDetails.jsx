@@ -92,6 +92,7 @@ function PlaceDetails() {
       <h1>{place.name}</h1>
       <div>
         <section>
+        <img src={place.logo} className="PlacesImg" alt={place.name} />
           <h3>
             Type:{" "}
             {Array.isArray(place.type) ? place.type.join(", ") : place.type}
