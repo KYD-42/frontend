@@ -166,11 +166,11 @@ function PlacesDisplay() {
       <div>
         <h1 className="touSoAver">PetFriendly Places</h1>
         <div>
-          <button onClick={() => setFilterType(null)}>All</button>
-          <button onClick={() => setFilterType("Restaurant")}>Restaurants</button>
-          <button onClick={() => setFilterType("Bar")}>Bars</button>
-          <button onClick={() => setFilterType("Hotel")}>Hotels</button>
-          <button onClick={() => setFilterType("Hostel")}>Hostels</button>
+          <button className="nav-button" onClick={() => setFilterType(null)}>All</button>
+          <button className="nav-button" onClick={() => setFilterType("Restaurant")}>Restaurants</button>
+          <button className="nav-button" onClick={() => setFilterType("Bar")}>Bars</button>
+          <button className="nav-button" onClick={() => setFilterType("Hotel")}>Hotels</button>
+          <button className="nav-button" onClick={() => setFilterType("Hostel")}>Hostels</button>
         </div>
         {loading && <div>Loading...</div>}
         {error && <div>{error}</div>}
@@ -190,11 +190,11 @@ function PlacesDisplay() {
               <button className="businessUser">Business sign up</button>
             </Link> */}
             <div>
-          <button onClick={() => setFilterType(null)}>All</button>
-          <button onClick={() => setFilterType("Restaurant")}>Restaurants</button>
-          <button onClick={() => setFilterType("Bar")}>Bars</button>
-          <button onClick={() => setFilterType("Hotel")}>Hotels</button>
-          <button onClick={() => setFilterType("Hostel")}>Hostels</button>
+          <button className="nav-button" onClick={() => setFilterType(null)}>All</button>
+          <button className="nav-button" onClick={() => setFilterType("Restaurant")}>Restaurants</button>
+          <button className="nav-button" onClick={() => setFilterType("Bar")}>Bars</button>
+          <button className="nav-button" onClick={() => setFilterType("Hotel")}>Hotels</button>
+          <button className="nav-button" onClick={() => setFilterType("Hostel")}>Hostels</button>
         </div>
     </section>
   );

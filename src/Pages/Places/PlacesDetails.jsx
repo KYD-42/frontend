@@ -107,10 +107,10 @@ function PlaceDetails() {
                 <div key={comment._id}>
                   <p>
                     <strong>{comment.userName}:</strong> {comment.text}
-                    <button onClick={() => handleEditClick(comment._id)}>
+                    <button className="nav-button" onClick={() => handleEditClick(comment._id)}>
                       edit
                     </button>
-                    <button onClick={() => handleCommentDelete(comment._id)}>
+                    <button className="nav-button" onClick={() => handleCommentDelete(comment._id)}>
                       delete
                     </button>
                   </p>
@@ -136,7 +136,7 @@ function PlaceDetails() {
             <button type="submit">Add Comment</button>
           </form>
           <Link to="/places">
-            <button>
+            <button className="nav-button">
               <span>Back</span>
             </button>
           </Link>

@@ -45,7 +45,7 @@ function RestaurantsPage() {
       <div>
         <h1 className="touSoAver">PetFriendly Places</h1>
         <div>
-          <Link to="/places"><button>All</button></Link>
+          <Link to="/places"><button className="nav-button">All</button></Link>
         </div>
         {loading ? <div>Loading...</div> : error ? <div>{error}</div> : (
           <div>
