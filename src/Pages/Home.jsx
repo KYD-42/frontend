@@ -38,7 +38,7 @@ function Home() {
         <div className="weather-display"><DisplayWeather/></div>
       <div>
         {!isLoggedIn && ( // Render buttons if user is not logged in
-          <>
+          <div className ="homeBTNreg">
             <Link to="/signup">
   <div className="registerUser">
   <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image"/>
@@ -51,7 +51,7 @@ function Home() {
         {/*     <Link to="/business-signup">
               <button className="businessUser">Business sign up</button>
             </Link> */}
-          </>
+          </div>
         )}
       </div>
       <Footer />

@@ -152,6 +152,12 @@
 
 /* USER ACCOUNT BUTTON */
 
+.homeBTNreg{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .registerUser {
   position: relative;
   width: 300px;
