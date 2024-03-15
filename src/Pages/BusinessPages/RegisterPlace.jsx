@@ -9,7 +9,7 @@ function RegisterPlace() {
   const { isLoggedIn, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
- /*  const [logo , setLogo ] = useState("") */
+  const [logo , setLogo ] = useState("")
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [address, setAddress] = useState("");
@@ -24,7 +24,7 @@ function RegisterPlace() {
     e.preventDefault();
 
     const reqBody = {
-     /*  logo, */
+      logo,
       name,
       type,
       address,
@@ -33,7 +33,7 @@ function RegisterPlace() {
       phone,
       email,
     };
-    /* const handleChange = async (e) => {
+     const handleChange = async (e) => {
       //Create a new form data to put all the image info
       const uploadData = new FormData();
       uploadData.append("imageUrl", e.target.files[0]);
@@ -41,11 +41,11 @@ function RegisterPlace() {
         //Send the upload request to the backend
         const response = await axios.post(`${API_URL}/api/upload`, uploadData);
         //The backend responds with the cloudinary image url
-        setImage(response.data.fileUrl);
+        setLogo(response.data.fileUrl);
       } catch (error) {
         console.log(error);
       }
-    }; */
+    }; 
 
     axios
       .post(`${API_URL}/api/places`,  reqBody, {
@@ -69,9 +69,9 @@ function RegisterPlace() {
           <div>
             <h3>Register Your Place</h3>
             <form onSubmit={handlePlaceCreate}>
-              {/* <div>
+              <div>
                 <input type="file" onChange={handleChange}/>
-                </div> */}
+                </div>
               <div>
                 <label>Name your Place:</label>
                 <input
