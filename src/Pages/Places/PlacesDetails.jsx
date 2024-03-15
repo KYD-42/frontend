@@ -92,7 +92,7 @@ function PlaceDetails() {
       <h1>{place.name}</h1>
       <div>
         <section>
-        <img src={place.logo} className="PlacesImg"  style={{marginTop:'100px', width: '1080px', height: '607.5px'}}  alt={place.name} />
+        <img src={place.logo} className="PlacesImg"  style={{marginTop: '100px', width: '1080px', height: '607.5px'}}  alt={place.name} />
           <h3>
             Type:{" "}
             {Array.isArray(place.type) ? place.type.join(", ") : place.type}
@@ -134,7 +134,7 @@ function PlaceDetails() {
               onChange={handleCommentChange}
               required
             ></textarea>
-            <button type="submit">Add Comment</button>
+            <button className="nav-button" type="submit">Add Comment</button>
           </form>
           <Link to="/places">
             <button className="nav-button">
