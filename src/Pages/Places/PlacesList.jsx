@@ -178,7 +178,7 @@ function PlacesDisplay() {
           {filteredPlaces.map((place) => (
             <NavLink key={place._id} to={`/places/${place._id}`}>
               <div className="places">
-                <img src={place.logo} alt={place.name} />
+                <img src={place.logo} className="PlacesImg" alt={place.name} />
                 <h2>{place.name}</h2>
                 <p>{place.description}</p>
               </div>
