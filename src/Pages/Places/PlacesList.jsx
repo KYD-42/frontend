@@ -179,8 +179,9 @@ function PlacesDisplay() {
             <NavLink key={place._id} to={`/places/${place._id}`}>
               <div className="places" style={{ gap: '30px' }}>
               <img src={place.logo} style={{ width: '780px', height: '360px', borderRadius: '20px' }} alt={place.name} />
-                <h2>{place.name}</h2>
-                <button className="nav-button">{place.description}</button>
+                <br/>
+                <button className="nav-button">{place.name}</button>
+                <p>{place.description}</p>
               </div>
             </NavLink>
           ))}
