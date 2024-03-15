@@ -41,7 +41,7 @@ function Home() {
           <>
             <Link to="/signup">
   <div className="registerUser">
-  <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image" style={{width: '48px'}}/>
+  <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Card image"/>
     <div className="registerUser__content">
       <p className="registerUser__title">Register your account</p>
       <p className="registerUser__description">Unlock pet-friendly adventures, share your experiences, and connect with a community of fellow pet lovers. Register now for exclusive access!!</p>
